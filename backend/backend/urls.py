@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from users import urlUser
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include(urlUser))
+    path('admin', admin.site.urls),
+    path('', include(urlUser)),
+    path('resetpassword', include('django_rest_passwordreset.urls', namespace='password_reset')),
 ]
